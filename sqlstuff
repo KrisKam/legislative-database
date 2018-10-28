@@ -1,0 +1,19 @@
+select bills.title, bills.bill, vote, count(*) 
+from votes 
+inner join bills on bills.id = votes.bill_id 
+group by bills.title, bills.bill, vote 
+order by bills.title, vote;
+
+select bills.title, bills.bill, legislators.party, vote, count(*) 
+from votes 
+inner join bills on bills.id = votes.bill_id 
+inner join legislators on legislators.id = votes.legislator_id
+group by bills.title, bills.bill, legislators.party, vote 
+order by bills.title, legislators.party, vote;
+
+select bills.title, bills.bill, legislators.chamber, legislators.party, vote, count(*) 
+from votes 
+inner join bills on bills.id = votes.bill_id 
+inner join legislators on legislators.id = votes.legislator_id
+group by bills.title, bills.bill, legislators.chamber, legislators.party, vote 
+order by bills.title, legislators.chamber, legislators.party, vote;

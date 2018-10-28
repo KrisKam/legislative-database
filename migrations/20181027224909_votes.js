@@ -7,6 +7,7 @@ exports.up = function(knex, Promise) {
     vote.integer("bill_id");
     vote.foreign("bill_id").references("bills.id");
     vote.string("vote");
+    vote.string("legislator_name")
   })
 };
 
