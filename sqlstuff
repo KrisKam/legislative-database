@@ -17,3 +17,5 @@ inner join bills on bills.id = votes.bill_id
 inner join legislators on legislators.id = votes.legislator_id
 group by bills.title, bills.bill, legislators.chamber, legislators.party, vote 
 order by bills.title, legislators.chamber, legislators.party, vote;
+
+select party, chamber, count(*) from legislators group by party, chamber;
