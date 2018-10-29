@@ -19,3 +19,6 @@ group by bills.title, bills.bill, legislators.chamber, legislators.party, vote
 order by bills.title, legislators.chamber, legislators.party, vote;
 
 select party, chamber, count(*) from legislators group by party, chamber;
+
+ select * from legislators where last_name = 'Lebsock';
+update legislators set party = 'Democrat' where last_name = 'Lebsock';
