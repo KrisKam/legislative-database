@@ -22,3 +22,48 @@ select party, chamber, count(*) from legislators group by party, chamber;
 
  select * from legislators where last_name = 'Lebsock';
 update legislators set party = 'Democrat' where last_name = 'Lebsock';
+
+
+
+k
+ 5696 | {"Sen. J. Tate","Sen. K. Priola","Rep. K. Becker","Rep. D. Pabon"}                             | Sen. J. Tate, Sen. K. Priola, Rep. K. BALTER TABLE
+legislative-vote-server=# \d+ bills
+                                                          Table "public.bills"
+   Column    |          Type          | Collation | Nullable |              Default              | Storage  | Stats target | Description
+-------------+------------------------+-----------+----------+-----------------------------------+----------+--------------+-------------
+ id          | integer                |           | not null | nextval('bills_id_seq'::regclass) | plain    |              |
+ title       | character varying(255) |           |          |                                   | extended |              |
+ bill        | character varying(255) |           |          |                                   | extended |              |
+ bill_url    | character varying(255) |           |          |                                   | extended |              |
+ last_action | character varying(255) |           |          |                                   | extended |              |
+ subject     | character varying(255) |           |          |                                   | extended |              |
+ description | text                   |           |          |                                   | extended |              |
+ sponsors    | text                   |           |          |                                   | extended |              |
+ subject2    | character varying      |           |          |                                   | extended |              |
+ sponsors2   | text                   |           |          |                                   | extended |              |
+Indexes:
+    "bills_pkey" PRIMARY KEY, btree (id)
+Referenced by:
+    TABLE "votes" CONSTRAINT "votes_bill_id_foreign" FOREIGN KEY (bill_id) REFERENCES bills(id)
+
+legislative-vote-server=# select id, sponsors, sponsors2 from bills;
+legislative-vote-server=# select id, sponsors, sponsors2 from bills;
+legislative-vote-server=# select id, sponsors, sponsors2 from bills;
+legislative-vote-server=# update bills set sponsors2=replace(sponsors, '{"', '');
+UPDATE 721
+legislative-vote-server=# select id, sponsors, sponsors2 from bills;
+legislative-vote-server=# update bills set sponsors2=replace(sponsors, '"}', '');
+UPDATE 721
+legislative-vote-server=# select id, sponsors, sponsors2 from bills;
+legislative-vote-server=# update bills set sponsors2=replace(sponsors, '{"', '');
+UPDATE 721
+legislative-vote-server=# select id, sponsors, sponsors2 from bills;
+legislative-vote-server=# update bills set sponsors2=replace(sponsors2, '"}', '');
+UPDATE 721
+legislative-vote-server=# select id, sponsors, sponsors2 from bills;
+legislative-vote-server=# update bills set sponsors2=replace(sponsors2, '","', ', ');
+UPDATE 721
+legislative-vote-server=# select id, sponsors, sponsors2 from bills;
+legislative-vote-server=# update bills set sponsors = sponsors2;
+UPDATE 721
+legislative-vote-server=# select id, sponsors, sponsors2 from bills;

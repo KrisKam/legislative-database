@@ -18,4 +18,15 @@ app.get("/bills", (req, res, next) => {
     .then(data => res.json(data))
 })
 
+app.get("/bills/:id", (req, res, next) => {
+  queries.getBillInfo(req.params.id)
+    .then(data => res.json(data))
+})
+
+app.get("/legislators", (req, res, next) => {
+  queries.getLegislators()
+    .then(data => res.json(data))
+})
+
+
 app.listen(port, () => (`Listening on port ${port}`));
