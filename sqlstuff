@@ -25,7 +25,28 @@ update legislators set party = 'Democrat' where last_name = 'Lebsock';
 
 
 
-k
+
+legislative-vote-server=# \d+ bills
+                                                          Table "public.bills"
+   Column    |          Type          | Collation | Nullable |              Default              | Storage  | Stats target | Description
+-------------+------------------------+-----------+----------+-----------------------------------+----------+--------------+-------------
+ id          | integer                |           | not null | nextval('bills_id_seq'::regclass) | plain    |              |
+ title       | character varying(255) |           |          |                                   | extended |              |
+ bill        | character varying(255) |           |          |                                   | extended |              |
+ bill_url    | character varying(255) |           |          |                                   | extended |              |
+ last_action | character varying(255) |           |          |                                   | extended |              |
+ subject     | character varying(255) |           |          |                                   | extended |              |
+ description | text                   |           |          |                                   | extended |              |
+ sponsors    | text                   |           |          |                                   | extended |              |
+ subject2    | character varying      |           |          |                                   | extended |              |
+Indexes:
+    "bills_pkey" PRIMARY KEY, btree (id)
+Referenced by:
+    TABLE "votes" CONSTRAINT "votes_bill_id_foreign" FOREIGN KEY (bill_id) REFERENCES bills(id)
+
+legislative-vote-server=# alter table bills add sponsors2 text;
+
+
  5696 | {"Sen. J. Tate","Sen. K. Priola","Rep. K. Becker","Rep. D. Pabon"}                             | Sen. J. Tate, Sen. K. Priola, Rep. K. BALTER TABLE
 legislative-vote-server=# \d+ bills
                                                           Table "public.bills"
