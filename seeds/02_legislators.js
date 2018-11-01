@@ -26,9 +26,9 @@ exports.seed = function(knex, Promise) {
         "email": "jon.becker.house@state.co.us",
         "occupation": "Telecom Executive",
         "headshot": "https://leg.colorado.gov/sites/default/files/styles/width_300/public/2018a_rsz_beckerjon-co-17.jpg?itok=uLkf26nZ",
-        "full_name": "KC Becker",
-        "last_name": "Becker K.",
-        "sponsor_name": "Rep. B. Becker",
+        "full_name": "J Becker",
+        "last_name": "Becker J.",
+        "sponsor_name": "Rep. J. Becker",
         "chamber": "House"
       }, {
         "title": "Representative",
@@ -39,9 +39,9 @@ exports.seed = function(knex, Promise) {
         "email": "kcbecker.house@state.co.us",
         "occupation": "Attorney",
         "headshot": "https://leg.colorado.gov/sites/default/files/styles/width_300/public/2018a_rsz_beckerkc-co-17.jpg?itok=2NxgoftS",
-        "full_name": "Jon Becker",
-        "last_name": "Becker J.",
-        "sponsor_name": "Rep. B. Becker",
+        "full_name": "KC Becker",
+        "last_name": "Becker K.",
+        "sponsor_name": "Rep. K. Becker",
         "chamber": "House"
       }, {
         "title": "Representative",
@@ -411,10 +411,10 @@ exports.seed = function(knex, Promise) {
         "title": "Representative",
         "name": "Lebsock, Steve",
         "district": 34,
-        "party": "Republican",
+        "party": "Democrat",
         "phone": "303-866-2931",
         "email": "steve.lebsock.house@state.co.us",
-        "occupation": "Legislator [Expelled]",
+        "occupation": "Legislator [Expelled, switched to Republican party]",
         "headshot": "https://leg.colorado.gov/sites/default/files/styles/width_300/public/2018a_rsz_lebsock-co-17.jpg?itok=Gd0_cpyx",
         "full_name": "Steve Lebsock",
         "last_name": "Lebsock",
