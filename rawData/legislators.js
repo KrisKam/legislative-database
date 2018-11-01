@@ -21,9 +21,9 @@ const arr = [
     "email": "jon.becker.house@state.co.us",
     "occupation": "Telecom Executive",
     "headshot": "https://leg.colorado.gov/sites/default/files/styles/width_300/public/2018a_rsz_beckerjon-co-17.jpg?itok=uLkf26nZ",
-    "fullName": "KC Becker",
-    "lastName": "Becker K.",
-    "sponsorName": "Rep. B. Becker"
+    "fullName": "Jon Becker",
+    "lastName": "Becker J.",
+    "sponsorName": "Rep. J. Becker"
   },
   {
     "title": "Representative",
@@ -34,9 +34,9 @@ const arr = [
     "email": "kcbecker.house@state.co.us",
     "occupation": "Attorney",
     "headshot": "https://leg.colorado.gov/sites/default/files/styles/width_300/public/2018a_rsz_beckerkc-co-17.jpg?itok=2NxgoftS",
-    "fullName": "Jon Becker",
-    "lastName": "Becker J.",
-    "sponsorName": "Rep. B. Becker"
+    "fullName": "KC Becker",
+    "lastName": "Becker K.",
+    "sponsorName": "Rep. K. Becker"
   },
   {
     "title": "Representative",

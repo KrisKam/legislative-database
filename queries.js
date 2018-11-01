@@ -32,7 +32,6 @@ const getLegislator = (id) => {
 }
 
 const getVoteInfo = (id) => {
-  console.log(id)
   return knex 
     .select("bills.title", "bills.bill", "legislators.chamber", "legislators.party", "vote", "votes.bill_id")
     .count()
