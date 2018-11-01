@@ -11,10 +11,6 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(morgan(process.env.NODE_ENV !== "production" ? "dev" : "combined"));
 
-app.get("/", (req, res, next) => {
-  res.send("This is a test");
-})
-
 app.get("/bills", (req, res, next) => {
   queries.getBillsPageInfo()
     .then(data => res.json(data))
