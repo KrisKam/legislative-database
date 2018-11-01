@@ -31,7 +31,7 @@ app.get("/legislators", (req, res, next) => {
 })
 
 app.get("/legislators/:id", (req, res, next) => {
-  queries.getBillInfo(req.params.id)
+  queries.getLegislator(req.params.id)
     .then(data => res.json(data))
 })
 

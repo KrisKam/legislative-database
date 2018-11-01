@@ -49,5 +49,6 @@ module.exports = {
   getBillsPageInfo,
   getBillInfo,
   getLegislators,
+  getLegislator,
   getVoteInfo
 }
