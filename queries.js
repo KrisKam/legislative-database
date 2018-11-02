@@ -9,11 +9,12 @@ const getBillsPageInfo = () => {
     .orderBy("bill", "asc")
 }
 
-const getBillInfo = (id) => {
+const getBillInfo = (bill) => {
+  console.log(bill)
   return knex 
     .select()
     .from("bills")
-    .where("id", id)
+    .where("bill", bill)
 }
 
 const getLegislators = () => {
@@ -31,16 +32,16 @@ const getLegislator = (id) => {
     .where("id", id)
 }
 
-const getVoteInfo = (id) => {
+const getVoteInfo = (bill) => {
   return knex 
-    .select("bills.title", "bills.bill", "legislators.chamber", "legislators.party", "vote", "votes.bill_id")
+    .select("bills.title", "bills.bill", "legislators.chamber", "legislators.party", "votes.vote", "votes.bill")
     .count()
     .from("votes")
-    .innerJoin("bills", "bills.id", "votes.bill_id")
-    .innerJoin("legislators", "legislators.id", "votes.legislator_id")
-    .where("votes.bill_id", id)
-    .groupBy("bills.title", "bills.bill", "legislators.chamber", "legislators.party", "vote", "votes.bill_id")
-    .orderBy("bills.title", "legislators.chamber", "legislators.party", "vote")
+    .innerJoin("bills", "bills.bill", "votes.bill")
+    .innerJoin("legislators", "legislators.last_name", "votes.name")
+    .where("votes.bill", bill)
+    .groupBy("bills.title", "bills.bill", "legislators.chamber", "legislators.party", "votes.vote", "votes.bill")
+    .orderBy("bills.title", "legislators.chamber", "legislators.party", "votes.vote")
 }
 
 module.exports = {

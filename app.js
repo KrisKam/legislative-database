@@ -16,10 +16,11 @@ app.get("/bills", (req, res, next) => {
     .then(data => res.json(data))
 })
 
-app.get("/bills/:id", (req, res, next) => {
-  queries.getBillInfo(req.params.id)
+app.get("/bills/:bill", (req, res, next) => {
+  console.log("params ", req.params.bill)
+  queries.getBillInfo(req.params.bill)
     .then(data => res.json(data))
-})
+}) 
 
 app.get("/legislators", (req, res, next) => {
   queries.getLegislators()
@@ -31,9 +32,9 @@ app.get("/legislators/:id", (req, res, next) => {
     .then(data => res.json(data))
 })
 
-app.get("/vote/:id", (req, res, next) => {
-  queries.getVoteInfo(req.params.id)
-    .then(data => res.json(data))
-})
+// app.get("/votes/:bill", (req, res, next) => {
+//   queries.getVoteInfo(req.params.id)
+//     .then(data => res.json(data))
+// })
 
 app.listen(port, () => (`Listening on port ${port}`));
