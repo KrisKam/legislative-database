@@ -17,7 +17,6 @@ app.get("/bills", (req, res, next) => {
 })
 
 app.get("/bills/:bill", (req, res, next) => {
-  console.log("params ", req.params.bill)
   queries.getBillInfo(req.params.bill)
     .then(data => res.json(data))
 }) 
@@ -32,9 +31,9 @@ app.get("/legislators/:id", (req, res, next) => {
     .then(data => res.json(data))
 })
 
-// app.get("/votes/:bill", (req, res, next) => {
-//   queries.getVoteInfo(req.params.id)
-//     .then(data => res.json(data))
-// })
+app.get("/votes/:bill", (req, res, next) => {
+  queries.getVoteInfo(req.params.bill)
+    .then(data => res.json(data))
+})
 
 app.listen(port, () => (`Listening on port ${port}`));

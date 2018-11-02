@@ -10,7 +10,6 @@ const getBillsPageInfo = () => {
 }
 
 const getBillInfo = (bill) => {
-  console.log(bill)
   return knex 
     .select()
     .from("bills")
