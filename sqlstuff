@@ -70,10 +70,10 @@ Referenced by:
 legislative-vote-server=# select id, sponsors, sponsors2 from bills;
 legislative-vote-server=# select id, sponsors, sponsors2 from bills;
 legislative-vote-server=# select id, sponsors, sponsors2 from bills;
-legislative-vote-server=# update bills set sponsors2=replace(sponsors, '{"', '');
+legislative-vote-server=# update bills set sponsors=replace(sponsors, '{"', '');
 UPDATE 721
 legislative-vote-server=# select id, sponsors, sponsors2 from bills;
-legislative-vote-server=# update bills set sponsors2=replace(sponsors, '"}', '');
+legislative-vote-server=# update bills set sponsors=replace(sponsors, '"}', '');
 UPDATE 721
 legislative-vote-server=# select id, sponsors, sponsors2 from bills;
 legislative-vote-server=# update bills set sponsors2=replace(sponsors, '{"', '');

@@ -43,11 +43,20 @@ const getVoteInfo = (bill) => {
     .orderBy("bills.title", "legislators.chamber", "legislators.party", "votes.vote")
 }
 
+const getLegislatorVote = (id, bill) => {
+  return knex 
+    .select("votes.name", "votes.bill", "votes.vote", "legislators.id")
+    .from("votes")
+    .innerJoin("legislators", "legislators.last_name", "votes.name")
+    .where({"legislators.id": id, "votes.bill": bill})
+}
+
 module.exports = {
 
   getBillsPageInfo,
   getBillInfo,
   getLegislators,
   getLegislator,
-  getVoteInfo
+  getVoteInfo,
+  getLegislatorVote
 }

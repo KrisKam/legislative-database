@@ -36,4 +36,9 @@ app.get("/votes/:bill", (req, res, next) => {
     .then(data => res.json(data))
 })
 
+app.get("/votes/:id/:bill", (req, res, next) => {
+  queries.getLegislatorVote(req.params.id, req.params.bill)
+  .then(data => res.json(data))
+})
+
 app.listen(port, () => (`Listening on port ${port}`));
