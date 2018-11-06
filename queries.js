@@ -51,30 +51,30 @@ const getLegislatorVote = (id, bill) => {
     .where({"legislators.id": id, "votes.bill": bill})
 }
 
-// const allComments = () => {
-//   return knex.select()
-//     .from("comments")
-//     .orderBy("id", "ascending");
-// };
+const allComments = () => {
+  return knex.select()
+    .from("comments")
+    .orderBy("id", "ascending");
+};
 
-// const createComment = (newData) => {
-//   return knex("comments")
-//     .insert(newData)
-//     .returning('*');
-// };
+const createComment = (newData) => {
+  return knex("comments")
+    .insert(newData)
+    .returning('*');
+};
 
-// const updateComment = (id, updatedData) => {
-//   return knex("comments")
-//     .where("id", id)
-//     .update(updatedData);
-// };
+const updateComment = (id, updatedData) => {
+  return knex("comments")
+    .where("id", id)
+    .update(updatedData);
+};
 
-// const deleteComment = (id) => {
-//   return knex.select()
-//     .from("comments")
-//     .where("id", id)
-//     .delete();
-// };
+const deleteComment = (id) => {
+  return knex.select()
+    .from("comments")
+    .where("id", id)
+    .delete();
+};
 
 module.exports = {
 
@@ -84,9 +84,9 @@ module.exports = {
   getLegislator,
   getVoteInfo,
   getLegislatorVote,
-  // allComments,
-  // createComment,
-  // updateComment,
-  // deleteComment
+  allComments,
+  createComment,
+  updateComment,
+  deleteComment
 
 }
